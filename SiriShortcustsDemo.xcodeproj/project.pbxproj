@@ -19,6 +19,16 @@
 		9B0464E5222D3F85002FEE2F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0464E1222D3F85002FEE2F /* Result.swift */; };
 		9B0464E6222D3F85002FEE2F /* FlickrSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0464E2222D3F85002FEE2F /* FlickrSearchResults.swift */; };
 		9B0464E7222D3F85002FEE2F /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0464E3222D3F85002FEE2F /* Flickr.swift */; };
+		9BDEFD17222D4E6900D08D37 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD16222D4E6900D08D37 /* IntentHandler.swift */; };
+		9BDEFD20222D4E6A00D08D37 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDEFD1F222D4E6A00D08D37 /* IntentsUI.framework */; };
+		9BDEFD23222D4E6A00D08D37 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD22222D4E6A00D08D37 /* IntentViewController.swift */; };
+		9BDEFD26222D4E6A00D08D37 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDEFD24222D4E6A00D08D37 /* MainInterface.storyboard */; };
+		9BDEFD2A222D4E6A00D08D37 /* SiriPhotoIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9BDEFD1D222D4E6A00D08D37 /* SiriPhotoIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9BDEFD2D222D4E6A00D08D37 /* SiriPhotoIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9BDEFD14222D4E6900D08D37 /* SiriPhotoIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9BDEFD36222D4EBD00D08D37 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD35222D4EBD00D08D37 /* Intents.intentdefinition */; };
+		9BDEFD38222D505900D08D37 /* SiriPhotoIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD37222D505900D08D37 /* SiriPhotoIntentHandler.swift */; };
+		9BDEFD39222D520C00D08D37 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD35222D4EBD00D08D37 /* Intents.intentdefinition */; };
+		9BDEFD3A222D520E00D08D37 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9BDEFD35222D4EBD00D08D37 /* Intents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +39,36 @@
 			remoteGlobalIDString = 9B0464B1222D326B002FEE2F;
 			remoteInfo = SiriShortcustsDemo;
 		};
+		9BDEFD28222D4E6A00D08D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B0464AA222D326B002FEE2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDEFD1C222D4E6A00D08D37;
+			remoteInfo = SiriPhotoIntentUI;
+		};
+		9BDEFD2B222D4E6A00D08D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B0464AA222D326B002FEE2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDEFD13222D4E6900D08D37;
+			remoteInfo = SiriPhotoIntent;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9BDEFD34222D4E6A00D08D37 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9BDEFD2D222D4E6A00D08D37 /* SiriPhotoIntent.appex in Embed App Extensions */,
+				9BDEFD2A222D4E6A00D08D37 /* SiriPhotoIntentUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9B0464B2222D326B002FEE2F /* SiriShortcustsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiriShortcustsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +87,17 @@
 		9B0464E1222D3F85002FEE2F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9B0464E2222D3F85002FEE2F /* FlickrSearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchResults.swift; sourceTree = "<group>"; };
 		9B0464E3222D3F85002FEE2F /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
+		9BDEFD0F222D4DDD00D08D37 /* SiriShortcustsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriShortcustsDemo.entitlements; sourceTree = "<group>"; };
+		9BDEFD14222D4E6900D08D37 /* SiriPhotoIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriPhotoIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDEFD16222D4E6900D08D37 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		9BDEFD18222D4E6900D08D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDEFD1D222D4E6A00D08D37 /* SiriPhotoIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriPhotoIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDEFD1F222D4E6A00D08D37 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		9BDEFD22222D4E6A00D08D37 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		9BDEFD25222D4E6A00D08D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9BDEFD27222D4E6A00D08D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDEFD35222D4EBD00D08D37 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		9BDEFD37222D505900D08D37 /* SiriPhotoIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriPhotoIntentHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +115,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BDEFD11222D4E6900D08D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDEFD1A222D4E6A00D08D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDEFD20222D4E6A00D08D37 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +138,9 @@
 			children = (
 				9B0464B4222D326B002FEE2F /* SiriShortcustsDemo */,
 				9B0464C9222D326C002FEE2F /* SiriShortcustsDemoTests */,
+				9BDEFD15222D4E6900D08D37 /* SiriPhotoIntent */,
+				9BDEFD21222D4E6A00D08D37 /* SiriPhotoIntentUI */,
+				9BDEFD1E222D4E6A00D08D37 /* Frameworks */,
 				9B0464B3222D326B002FEE2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +150,8 @@
 			children = (
 				9B0464B2222D326B002FEE2F /* SiriShortcustsDemo.app */,
 				9B0464C6222D326C002FEE2F /* SiriShortcustsDemoTests.xctest */,
+				9BDEFD14222D4E6900D08D37 /* SiriPhotoIntent.appex */,
+				9BDEFD1D222D4E6A00D08D37 /* SiriPhotoIntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,8 +159,10 @@
 		9B0464B4222D326B002FEE2F /* SiriShortcustsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9BDEFD0F222D4DDD00D08D37 /* SiriShortcustsDemo.entitlements */,
 				9B0464B5222D326B002FEE2F /* AppDelegate.swift */,
 				9B0464D9222D3CBB002FEE2F /* Constants.swift */,
+				9BDEFD35222D4EBD00D08D37 /* Intents.intentdefinition */,
 				9B0464E9222D3FA6002FEE2F /* Controllers */,
 				9B0464E8222D3F92002FEE2F /* Flickr */,
 				9B0464B9222D326B002FEE2F /* Main.storyboard */,
@@ -130,6 +202,34 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		9BDEFD15222D4E6900D08D37 /* SiriPhotoIntent */ = {
+			isa = PBXGroup;
+			children = (
+				9BDEFD16222D4E6900D08D37 /* IntentHandler.swift */,
+				9BDEFD37222D505900D08D37 /* SiriPhotoIntentHandler.swift */,
+				9BDEFD18222D4E6900D08D37 /* Info.plist */,
+			);
+			path = SiriPhotoIntent;
+			sourceTree = "<group>";
+		};
+		9BDEFD1E222D4E6A00D08D37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BDEFD1F222D4E6A00D08D37 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BDEFD21222D4E6A00D08D37 /* SiriPhotoIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				9BDEFD22222D4E6A00D08D37 /* IntentViewController.swift */,
+				9BDEFD24222D4E6A00D08D37 /* MainInterface.storyboard */,
+				9BDEFD27222D4E6A00D08D37 /* Info.plist */,
+			);
+			path = SiriPhotoIntentUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,10 +240,13 @@
 				9B0464AE222D326B002FEE2F /* Sources */,
 				9B0464AF222D326B002FEE2F /* Frameworks */,
 				9B0464B0222D326B002FEE2F /* Resources */,
+				9BDEFD34222D4E6A00D08D37 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9BDEFD29222D4E6A00D08D37 /* PBXTargetDependency */,
+				9BDEFD2C222D4E6A00D08D37 /* PBXTargetDependency */,
 			);
 			name = SiriShortcustsDemo;
 			productName = SiriShortcustsDemo;
@@ -168,6 +271,40 @@
 			productReference = 9B0464C6222D326C002FEE2F /* SiriShortcustsDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9BDEFD13222D4E6900D08D37 /* SiriPhotoIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDEFD31222D4E6A00D08D37 /* Build configuration list for PBXNativeTarget "SiriPhotoIntent" */;
+			buildPhases = (
+				9BDEFD10222D4E6900D08D37 /* Sources */,
+				9BDEFD11222D4E6900D08D37 /* Frameworks */,
+				9BDEFD12222D4E6900D08D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriPhotoIntent;
+			productName = SiriPhotoIntent;
+			productReference = 9BDEFD14222D4E6900D08D37 /* SiriPhotoIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		9BDEFD1C222D4E6A00D08D37 /* SiriPhotoIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDEFD2E222D4E6A00D08D37 /* Build configuration list for PBXNativeTarget "SiriPhotoIntentUI" */;
+			buildPhases = (
+				9BDEFD19222D4E6A00D08D37 /* Sources */,
+				9BDEFD1A222D4E6A00D08D37 /* Frameworks */,
+				9BDEFD1B222D4E6A00D08D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriPhotoIntentUI;
+			productName = SiriPhotoIntentUI;
+			productReference = 9BDEFD1D222D4E6A00D08D37 /* SiriPhotoIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,10 +317,21 @@
 				TargetAttributes = {
 					9B0464B1222D326B002FEE2F = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 					9B0464C5222D326C002FEE2F = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 9B0464B1222D326B002FEE2F;
+					};
+					9BDEFD13222D4E6900D08D37 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					9BDEFD1C222D4E6A00D08D37 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -202,6 +350,8 @@
 			targets = (
 				9B0464B1222D326B002FEE2F /* SiriShortcustsDemo */,
 				9B0464C5222D326C002FEE2F /* SiriShortcustsDemoTests */,
+				9BDEFD13222D4E6900D08D37 /* SiriPhotoIntent */,
+				9BDEFD1C222D4E6A00D08D37 /* SiriPhotoIntentUI */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +374,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BDEFD12222D4E6900D08D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDEFD1B222D4E6A00D08D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDEFD26222D4E6A00D08D37 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -234,6 +399,7 @@
 				9B0464E5222D3F85002FEE2F /* Result.swift in Sources */,
 				9B0464D8222D3B3E002FEE2F /* PicCollectionViewItem.swift in Sources */,
 				9B0464E7222D3F85002FEE2F /* Flickr.swift in Sources */,
+				9BDEFD36222D4EBD00D08D37 /* Intents.intentdefinition in Sources */,
 				9B0464D6222D3AA8002FEE2F /* PicsColllectionViewController.swift in Sources */,
 				9B0464B6222D326B002FEE2F /* AppDelegate.swift in Sources */,
 				9B0464E4222D3F85002FEE2F /* FlickrPhoto.swift in Sources */,
@@ -250,6 +416,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BDEFD10222D4E6900D08D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDEFD39222D520C00D08D37 /* Intents.intentdefinition in Sources */,
+				9BDEFD38222D505900D08D37 /* SiriPhotoIntentHandler.swift in Sources */,
+				9BDEFD17222D4E6900D08D37 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDEFD19222D4E6A00D08D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDEFD3A222D520E00D08D37 /* Intents.intentdefinition in Sources */,
+				9BDEFD23222D4E6A00D08D37 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -257,6 +442,16 @@
 			isa = PBXTargetDependency;
 			target = 9B0464B1222D326B002FEE2F /* SiriShortcustsDemo */;
 			targetProxy = 9B0464C7222D326C002FEE2F /* PBXContainerItemProxy */;
+		};
+		9BDEFD29222D4E6A00D08D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDEFD1C222D4E6A00D08D37 /* SiriPhotoIntentUI */;
+			targetProxy = 9BDEFD28222D4E6A00D08D37 /* PBXContainerItemProxy */;
+		};
+		9BDEFD2C222D4E6A00D08D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDEFD13222D4E6900D08D37 /* SiriPhotoIntent */;
+			targetProxy = 9BDEFD2B222D4E6A00D08D37 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -275,6 +470,14 @@
 				9B0464BF222D326C002FEE2F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9BDEFD24222D4E6A00D08D37 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDEFD25222D4E6A00D08D37 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -399,15 +602,17 @@
 		9B0464D0222D326C002FEE2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SiriShortcustsDemo/SiriShortcustsDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57NTVVM6G2;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
 				INFOPLIST_FILE = SiriShortcustsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,15 +622,17 @@
 		9B0464D1222D326C002FEE2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SiriShortcustsDemo/SiriShortcustsDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57NTVVM6G2;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
 				INFOPLIST_FILE = SiriShortcustsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,6 +681,82 @@
 			};
 			name = Release;
 		};
+		9BDEFD2F222D4E6A00D08D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
+				INFOPLIST_FILE = SiriPhotoIntentUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l.SiriPhotoIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BDEFD30222D4E6A00D08D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
+				INFOPLIST_FILE = SiriPhotoIntentUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l.SiriPhotoIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9BDEFD32222D4E6A00D08D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
+				INFOPLIST_FILE = SiriPhotoIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l.SiriPhotoIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BDEFD33222D4E6A00D08D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7LBYY3B34;
+				INFOPLIST_FILE = SiriPhotoIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hs.SiriShortcustsDemo.l.SiriPhotoIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +783,24 @@
 			buildConfigurations = (
 				9B0464D3222D326C002FEE2F /* Debug */,
 				9B0464D4222D326C002FEE2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDEFD2E222D4E6A00D08D37 /* Build configuration list for PBXNativeTarget "SiriPhotoIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDEFD2F222D4E6A00D08D37 /* Debug */,
+				9BDEFD30222D4E6A00D08D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDEFD31222D4E6A00D08D37 /* Build configuration list for PBXNativeTarget "SiriPhotoIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDEFD32222D4E6A00D08D37 /* Debug */,
+				9BDEFD33222D4E6A00D08D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

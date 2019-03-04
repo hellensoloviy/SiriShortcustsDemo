@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Intents
+
 
 class PicsColllectionViewController: UICollectionViewController {
     // MARK: - Properties
@@ -18,6 +20,12 @@ class PicsColllectionViewController: UICollectionViewController {
     private let flickr = Flickr()
     private let itemsPerRow: CGFloat = 3
     
+    //MARK: -
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        donateInteraction()
+    }
     
     // MARK: - UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -37,6 +45,22 @@ class PicsColllectionViewController: UICollectionViewController {
         return cell
     }
     
+    //MARK: - Private
+    func donateInteraction() {
+        let intent = PhotoOfTheDayIntent()
+        intent.suggestedInvocationPhrase = "Energize"
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    os_log("Interaction donation failed: %@", log: OSLog.default, type: .error, error)
+                } else {
+                    os_log("Successfully donated interaction")
+                }
+            }
+        }
+    }
     
 }
 
