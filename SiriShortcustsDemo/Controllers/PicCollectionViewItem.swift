@@ -12,4 +12,7 @@ import UIKit
 class PicCollectionViewItem: UICollectionViewCell {
     static let identifier = "PicReusableCell"
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
 }

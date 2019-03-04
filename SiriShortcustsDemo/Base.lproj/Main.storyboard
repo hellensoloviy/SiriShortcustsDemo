@@ -46,7 +46,21 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="156" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ik7-QT-i0a">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="165"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ik7-QT-i0a" secondAttribute="bottom" id="275-Tf-tUJ"/>
+                                    <constraint firstItem="ik7-QT-i0a" firstAttribute="leading" secondItem="F3c-fP-xBK" secondAttribute="leading" id="aRm-Vt-xkE"/>
+                                    <constraint firstItem="ik7-QT-i0a" firstAttribute="top" secondItem="F3c-fP-xBK" secondAttribute="top" id="wCe-eO-0d5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ik7-QT-i0a" secondAttribute="trailing" id="yKw-Ra-mfq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="ik7-QT-i0a" id="pmZ-OG-fBo"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
