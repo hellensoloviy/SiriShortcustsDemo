@@ -16,15 +16,20 @@ class PicsColllectionViewController: UICollectionViewController {
     private let sectionInsets = UIEdgeInsets(top: 20.0, left: 12.0, bottom: 50.0, right: 12.0)
     
     //search results will be limited to 20 
-    private var searches: [FlickrSearchResults] = []
+    private var searches: [FlickrSearchResults] = [] {
+        didSet {
+             collectionView.reloadData()
+        }
+    }
     private let flickr = Flickr()
     private let itemsPerRow: CGFloat = 3
+    private var textToSearch: String?
+
     
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        donateInteraction()
     }
     
     // MARK: - UICollectionViewDataSource
@@ -47,16 +52,17 @@ class PicsColllectionViewController: UICollectionViewController {
     
     //MARK: - Private
     func donateInteraction() {
-        let intent = PhotoOfTheDayIntent()
-        intent.suggestedInvocationPhrase = "Energize"
+        let intent = IntentIntent()
+        intent.textToSearchFor = textToSearch
+        intent.suggestedInvocationPhrase = "Demo actions"
         
         let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate { (error) in
             if error != nil {
                 if let error = error as NSError? {
-                    os_log("Interaction donation failed: %@", log: OSLog.default, type: .error, error)
+                    print("Interaction donation failed: \(error)")
                 } else {
-                    os_log("Successfully donated interaction")
+                    print("Successfully donated interaction")
                 }
             }
         }
@@ -94,7 +100,8 @@ private extension PicsColllectionViewController {
 // MARK: - Text Field Delegate
 extension PicsColllectionViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
+        self.textToSearch = textField.text
+        
         //show indicator
         let activityIndicator = UIActivityIndicatorView(style: .gray)
         textField.addSubview(activityIndicator)
@@ -108,9 +115,9 @@ extension PicsColllectionViewController : UITextFieldDelegate {
             case .error(let error) :
                 print("HS__ Error Searching: \(error)")
             case .results(let results):
+                self.donateInteraction()
                 print("HS__ Found \(results.searchResults.count) matching \(results.searchTerm)")
                 self.searches.insert(results, at: 0)
-                self.collectionView?.reloadData()
             }
         }
         

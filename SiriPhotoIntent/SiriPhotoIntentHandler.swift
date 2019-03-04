@@ -11,25 +11,26 @@ import Foundation
 class SiriPhotoIntentHandler: NSObject, IntentIntentHandling {
     
     func confirm(intent: IntentIntent, completion: @escaping (IntentIntentResponse) -> Void) {
-//        let photoInfoController = PhotoInfoController()
-//        photoInfoController.fetchPhotoOfTheDay { (photoInfo) in
-//            if let photoInfo = photoInfo {
-//                if photoInfo.isImage {
-//                    completion(IntentIntentResponse(code: .ready, userActivity: nil))
-//                } else {
-//                    completion(IntentIntentResponse(code: .failureNoImage, userActivity: nil))
-//                }
-//            }
-//        }
-        
+        if let _ = intent.textToSearchFor {
+            completion(IntentIntentResponse(code: .ready, userActivity: nil))
+        } else {
+            completion(IntentIntentResponse(code: .unspecified, userActivity: nil))
+        }
     }
     
     func handle(intent: IntentIntent, completion: @escaping (IntentIntentResponse) -> Void) {
-//        let photoInfoController =
-//        photoInfoController.fetchPhotoOfTheDay { (photoInfo) in
-//            if let photoInfo = photoInfo {
-//                completion(IntentIntentResponse.success(photoTitle: photoInfo.title))
-//            }
-//        }
+        if let textToSearch = intent.textToSearchFor {
+            Flickr().searchFlickr(for: textToSearch) { (searchResults) in
+                switch searchResults {
+                case .error(let _) :
+                    completion(IntentIntentResponse(code: .failure, userActivity: nil))
+                case .results(let results):
+                    let count = NSNumber.init(value: results.searchResults.count)
+                   completion(.success(resultsCount: count, searchedText: textToSearch))
+                }
+            }
+        } else {
+            completion(IntentIntentResponse(code: .unspecified, userActivity: nil))
+        }
     }
 }

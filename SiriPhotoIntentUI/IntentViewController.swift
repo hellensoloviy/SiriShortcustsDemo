@@ -34,7 +34,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
                        context: INUIHostedViewContext,
                        completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         
-        guard interaction.intent is IntentIntent else {
+        guard let currentIntent = interaction.intent as? IntentIntent else {
             completion(false, Set(), .zero)
             return
         }
@@ -52,30 +52,37 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         // }
         
         activityIndicator.startAnimating()
+        guard let text = currentIntent.textToSearchFor else {
+            self.stop()
+            return
+        }
         
-//
-//        let photoInfoController = PhotoInfoController()
-//        photoInfoController.fetchPhotoOfTheDay { (photoInfo) in
-//            if let photoInfo = photoInfo {
-//                photoInfoController.fetchUrlData(with: photoInfo.url) { [weak self] (data) in
-//                    if let data = data {
-//                        let image = UIImage(data: data)!
-//
-//                        DispatchQueue.main.async {
-//                            self?.imageView.image = image
-//                            self?.activityIndicator.stopAnimating()
-//                            self?.activityIndicator.isHidden = true
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        Flickr().searchFlickr(for: text) { (searchResults) in
+            switch searchResults {
+            case .error(let error):
+                self.stop()
+                completion(false, parameters, CGSize(width: 400, height: 400))
+            case .results(let results):
+                let count = NSNumber.init(value: results.searchResults.count)
+                completion(true, parameters, CGSize(width: 400, height: 400))
+                self.stop(with: results.searchResults.first?.largeImage)
+            }
+        }
+        
         
         completion(true, parameters, desiredSize)
     }
     
-//    var desiredSize: CGSize {
-//        return self.extensionContext!.hostedViewMaximumAllowedSize
-//    }
+    private func stop(with image: UIImage? = nil) {
+        let image = image ?? UIImage.init(named: "defaultPic")
+        
+        DispatchQueue.main.async {
+            self.imageView.image = image
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
+    }
+    
+    
     
 }

@@ -38,7 +38,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Here is a result for ${textToSearchFor}</string>
+					<string>Find the result for ${textToSearchFor}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>c2UpsK</string>
 				</dict>
@@ -74,7 +74,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Here is a first finded result for ${searchedText}</string>
+						<string>I found ${resultsCount} results for ${searchedText} . Here is the fist one:</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>lgaWy0</string>
 						<key>INIntentResponseCodeName</key>
@@ -94,7 +94,7 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>1</integer>
+				<integer>3</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
@@ -108,6 +108,18 @@
 						<integer>1</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>resultsCount</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Integer</string>
 					</dict>
 				</array>
 			</dict>
