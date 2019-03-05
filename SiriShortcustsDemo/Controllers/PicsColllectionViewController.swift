@@ -52,11 +52,16 @@ class PicsColllectionViewController: UICollectionViewController {
     
     //MARK: - Private
     func donateInteraction() {
-        UserDefaults.standard.set(textToSearch, forKey: Constants.UserDefaults.lastSearchedTextKey)
-        
+        UserDefaults.standard.addSuite(named: Constants.UserDefaults.storageNameKey)
+        if let defaults = UserDefaults.init(suiteName: Constants.UserDefaults.storageNameKey) {
+            defaults.set(textToSearch, forKey: Constants.UserDefaults.lastSearchedTextKey)
+            defaults.synchronize()
+        } else {
+            
+        }
+
         let intent = IntentIntent()
         intent.suggestedInvocationPhrase = "Restore last search"
-//        intent.setImage(INImage(named: "defaulPic"), forParameterNamed: <#T##KeyPath<IntentIntent, Value>#>)
         
         let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate { (error) in

@@ -52,7 +52,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         // }
         
         activityIndicator.startAnimating()
-        guard let textToSearch = UserDefaults.standard.object(forKey: Constants.UserDefaults.lastSearchedTextKey) as? String else {
+
+        guard let defaults = UserDefaults.init(suiteName: Constants.UserDefaults.storageNameKey), let textToSearch = defaults.object(forKey: Constants.UserDefaults.lastSearchedTextKey) as? String else {
             self.stop()
             return
         }
@@ -61,11 +62,10 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             switch searchResults {
             case .error(let _):
                 self.stop()
-                completion(false, parameters, CGSize(width: 400, height: 400))
+                completion(false, parameters, desiredSize)
                 
             case .results(let results):
-                let count = NSNumber.init(value: results.searchResults.count)
-                completion(true, parameters, CGSize(width: 400, height: 400))
+                completion(true, parameters, desiredSize)
                 self.stop(with: results.searchResults.first?.thumbnail)
                 
             }
@@ -75,7 +75,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
     
     private func stop(with image: UIImage? = nil) {
-        let image = image ?? UIImage.init(named: "defaultPic")
+        let image = image ?? UIImage.init(named: "noResults")
         
         DispatchQueue.main.async {
             self.imageView.image = image

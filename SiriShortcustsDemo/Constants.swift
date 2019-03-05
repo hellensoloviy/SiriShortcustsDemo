@@ -17,6 +17,6 @@ struct Constants {
     
     struct UserDefaults {
         static let lastSearchedTextKey = "siri.shortcuts.exampe.lastSearchedTextKey"
-
+        static let storageNameKey = "group.hs.SiriShortcustsDemo.l"
     }
 }

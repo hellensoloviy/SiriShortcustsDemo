@@ -17,8 +17,10 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>search</string>
+			<key>INIntentDefaultImageName</key>
+			<string>defaultPic</string>
 			<key>INIntentDescription</key>
-			<string>Search results from Flickr API</string>
+			<string>Show last searhed image</string>
 			<key>INIntentDescriptionID</key>
 			<string>htJbh7</string>
 			<key>INIntentLastParameterTag</key>
@@ -123,7 +125,7 @@
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
 			<key>INIntentTitle</key>
-			<string>Search on Flickr</string>
+			<string>Restore Flickr search</string>
 			<key>INIntentTitleID</key>
 			<string>ZUKsNK</string>
 			<key>INIntentType</key>
