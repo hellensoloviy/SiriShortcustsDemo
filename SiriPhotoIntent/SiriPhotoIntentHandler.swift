@@ -9,28 +9,26 @@
 import Foundation
 
 class SiriPhotoIntentHandler: NSObject, IntentIntentHandling {
-    
     func confirm(intent: IntentIntent, completion: @escaping (IntentIntentResponse) -> Void) {
-        if let _ = intent.textToSearchFor {
+        if let _ = UserDefaults.standard.object(forKey: Constants.UserDefaults.lastSearchedTextKey) as? String {
             completion(IntentIntentResponse(code: .ready, userActivity: nil))
         } else {
-            completion(IntentIntentResponse(code: .unspecified, userActivity: nil))
+            completion(IntentIntentResponse(code: .noSearchRequest, userActivity: nil))
         }
     }
     
     func handle(intent: IntentIntent, completion: @escaping (IntentIntentResponse) -> Void) {
-        if let textToSearch = intent.textToSearchFor {
+        if let textToSearch = UserDefaults.standard.object(forKey: Constants.UserDefaults.lastSearchedTextKey) as? String {
             Flickr().searchFlickr(for: textToSearch) { (searchResults) in
                 switch searchResults {
-                case .error(let _) :
+                case .error(_):
                     completion(IntentIntentResponse(code: .failure, userActivity: nil))
                 case .results(let results):
-                    let count = NSNumber.init(value: results.searchResults.count)
-                   completion(.success(resultsCount: count, searchedText: textToSearch))
+                   completion(.success(searchedText: textToSearch))
                 }
             }
         } else {
-            completion(IntentIntentResponse(code: .unspecified, userActivity: nil))
+            completion(IntentIntentResponse(code: .noSearchRequest, userActivity: nil))
         }
     }
 }

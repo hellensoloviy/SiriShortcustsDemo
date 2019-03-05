@@ -52,23 +52,24 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         // }
         
         activityIndicator.startAnimating()
-        guard let text = currentIntent.textToSearchFor else {
+        guard let textToSearch = UserDefaults.standard.object(forKey: Constants.UserDefaults.lastSearchedTextKey) as? String else {
             self.stop()
             return
         }
         
-        Flickr().searchFlickr(for: text) { (searchResults) in
+        Flickr().searchFlickr(for: textToSearch) { (searchResults) in
             switch searchResults {
-            case .error(let error):
+            case .error(let _):
                 self.stop()
                 completion(false, parameters, CGSize(width: 400, height: 400))
+                
             case .results(let results):
                 let count = NSNumber.init(value: results.searchResults.count)
                 completion(true, parameters, CGSize(width: 400, height: 400))
-                self.stop(with: results.searchResults.first?.largeImage)
+                self.stop(with: results.searchResults.first?.thumbnail)
+                
             }
         }
-        
         
         completion(true, parameters, desiredSize)
     }

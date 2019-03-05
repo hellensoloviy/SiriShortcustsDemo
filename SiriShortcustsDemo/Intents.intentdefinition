@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>information</string>
+			<string>search</string>
 			<key>INIntentDescription</key>
 			<string>Search results from Flickr API</string>
 			<key>INIntentDescriptionID</key>
@@ -27,37 +27,24 @@
 			<string>Intent</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>textToSearchFor</key>
+				<key></key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
+					<false/>
 					<key>INIntentParameterCombinationSubtitle</key>
 					<string></string>
 					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>pV492x</string>
+					<string>ToIWjd</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Find the result for ${textToSearchFor}</string>
+					<string></string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>c2UpsK</string>
+					<string>ReDkOr</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
-			<array>
-				<dict>
-					<key>INIntentParameterDisplayPriority</key>
-					<integer>1</integer>
-					<key>INIntentParameterName</key>
-					<string>textToSearchFor</string>
-					<key>INIntentParameterSupportsMultipleValues</key>
-					<false/>
-					<key>INIntentParameterTag</key>
-					<integer>1</integer>
-					<key>INIntentParameterType</key>
-					<string>String</string>
-				</dict>
-			</array>
+			<array/>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
@@ -74,7 +61,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>I found ${resultsCount} results for ${searchedText} . Here is the fist one:</string>
+						<string>Your last search was "${searchedText}". </string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>lgaWy0</string>
 						<key>INIntentResponseCodeName</key>
@@ -89,6 +76,16 @@
 						<string>KB85tu</string>
 						<key>INIntentResponseCodeName</key>
 						<string>noResult</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>There is nothing to restore.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>Royspf</string>
+						<key>INIntentResponseCodeName</key>
+						<string>noSearchRequest</string>
 						<key>INIntentResponseCodeSuccess</key>
 						<false/>
 					</dict>
@@ -126,15 +123,15 @@
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
 			<key>INIntentTitle</key>
-			<string>What do you want to search for? </string>
+			<string>Search on Flickr</string>
 			<key>INIntentTitleID</key>
 			<string>ZUKsNK</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentUserConfirmationRequired</key>
-			<true/>
+			<false/>
 			<key>INIntentVerb</key>
-			<string>View</string>
+			<string>Search</string>
 		</dict>
 	</array>
 </dict>

@@ -52,9 +52,11 @@ class PicsColllectionViewController: UICollectionViewController {
     
     //MARK: - Private
     func donateInteraction() {
+        UserDefaults.standard.set(textToSearch, forKey: Constants.UserDefaults.lastSearchedTextKey)
+        
         let intent = IntentIntent()
-        intent.textToSearchFor = textToSearch
-        intent.suggestedInvocationPhrase = "Demo actions"
+        intent.suggestedInvocationPhrase = "Restore last search"
+//        intent.setImage(INImage(named: "defaulPic"), forParameterNamed: <#T##KeyPath<IntentIntent, Value>#>)
         
         let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate { (error) in
@@ -92,7 +94,7 @@ extension PicsColllectionViewController : UICollectionViewDelegateFlowLayout {
 
 // MARK: - Private
 private extension PicsColllectionViewController {
-    func photo(for indexPath: IndexPath) -> FlickrPhoto {
+    func photo(for indexPath: IndexPath = IndexPath(row: 0, section: 0)) -> FlickrPhoto {
         return searches[indexPath.section].searchResults[indexPath.row]
     }
 }

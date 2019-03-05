@@ -14,4 +14,9 @@ struct Constants {
         static let secret = "bc398547efbbb627"
         // http://www.flickr.com/services/api/explore/?method=flickr.photos.search 
     }
+    
+    struct UserDefaults {
+        static let lastSearchedTextKey = "siri.shortcuts.exampe.lastSearchedTextKey"
+
+    }
 }
