@@ -3,7 +3,7 @@
 This this a simple project to get started with Siri Shortcusts (and Flickr API which was used for implement search). 
 
 
-## Creating of Shortcuts Voice Phrase from Settings
+## Creating a shortcut from Settings
 
 Here we already have a donated intent and expected phrase. 
 As you can undesrtand - it will restore last search request and show a result for it. 
