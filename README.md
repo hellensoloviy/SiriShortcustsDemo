@@ -6,7 +6,7 @@ This this a simple project to get started with Siri Shortcusts (and Flickr API w
 ## Creating of Shortcuts Voice Phrase from Settings
 
 Here we already have a donated intent and expected phrase. 
-As u can undesrtand - it will restore last search request and show a result for it. 
+As you can undesrtand - it will restore last search request and show a result for it. 
 
 > Search feature is implemented via Flickr API. You can also visit [separate project with a Flickr API only](https://github.com/hellensoloviy/FlickrAPIDemo) if you are interest in it. 
 
