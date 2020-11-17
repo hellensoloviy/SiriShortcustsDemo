@@ -34,7 +34,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
                        context: INUIHostedViewContext,
                        completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         
-        guard let currentIntent = interaction.intent as? IntentIntent else {
+        guard interaction.intent is IntentIntent else {
             completion(false, Set(), .zero)
             return
         }
@@ -60,7 +60,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         
         Flickr().searchFlickr(for: textToSearch) { (searchResults) in
             switch searchResults {
-            case .error(let _):
+            case .error(_):
                 self.stop()
                 completion(false, parameters, desiredSize)
                 
